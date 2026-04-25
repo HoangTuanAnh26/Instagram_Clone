@@ -43,3 +43,13 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
 RUN npm install -g n \
   && n stable \
   && npm update -g npm
+
+  # Thiết lập thư mục làm việc
+WORKDIR /var/www
+
+# Copy code vào trước (nếu Dockerfile của bạn chưa có lệnh copy)
+# COPY . . 
+
+# Chạy lệnh cấp quyền sở hữu cho user www-data
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
