@@ -12,7 +12,22 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        $posts = [
+            (object)['title' => '最初の投稿', 'body' => 'これは最初の投稿の本文です。'],
+            (object)['title' => '二番目の投稿', 'body' => 'これは二番目の投稿の本文です。'],
+            (object)['title' => '三番目の投稿', 'body' => 'これは三番目の投稿の本文です。']
+        ];
+        return view('posts.index',['posts' => $posts]);
+    }
+
+    public function index2()
+    {
+        $posts = [
+            (object)['title' => '最初の投稿', 'body' => 'これは最初の投稿の本文です。'],
+            (object)['title' => '二番目の投稿', 'body' => 'これは二番目の投稿の本文です。'],
+            (object)['title' => '三番目の投稿', 'body' => 'これは三番目の投稿の本文です。']
+        ];
+        return view('posts.index2',['posts' => $posts]);
     }
 
     /**

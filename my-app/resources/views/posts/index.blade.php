@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,4 +15,18 @@
     @endforeach
     
 </body>
-</html>
+</html> -->
+
+@extends('layouts.app')
+
+@section('title', '投稿一覧')
+
+@section('content')
+<h1>投稿一覧</h1>
+@foreach ($posts as $post)
+<div>
+    <h2>{{ $post->title }}</h2>
+    <p>{{ $post->body }}</p>
+</div>
+@endforeach
+@endsection
