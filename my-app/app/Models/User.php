@@ -64,7 +64,7 @@ class User extends Authenticatable
         $user->name = $data->name;
         $user->email = $data->email;
         $user->password = $data->password;
-        $user->save();;
+        $user->save();
         return $user;
     }
 
@@ -74,7 +74,14 @@ class User extends Authenticatable
         $user->name = $data->name;
         $user->email = $data->email;
         $user->password = $data->password;
-        $user->save();;
+        $user->save();
+        return $user;
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
         return $user;
     }
 }
